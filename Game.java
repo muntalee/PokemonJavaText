@@ -23,7 +23,7 @@ public class Game implements Runnable {
   
   private void init() {
     display = new Display(title, width, height);
-    testimage = ImageLoader.loadImage("/textures/test.png");
+    testimage = ImageLoader.loadImage("/textures/player/1.png");
   }
   
   private void tick() {
