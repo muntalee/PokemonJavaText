@@ -1,21 +1,18 @@
-import javax.swing.*;
-import java.awt.*;
 public class Battle {
-  private Player p1;
-	private Player p2;
-	public Battle(Player p1, Player p2) {
+
+	private Pokemon p1;
+	private Pokemon p2;
+
+	public Battle(Pokemon p1, Pokemon p2) {
 		this.p1 = p1;
 		this.p2 = p2;
 	}
-	
-	public void battleStatus() {
-		System.out.println("Players Currently in battle: ");
-		System.out.println(p1.getName() + ": " + p1.numPokemon() + " pokemon(s)");
-		System.out.println(p2.getName() + ": " + p2.numPokemon() + " pokemon(s)");
-	}
 
-  public void displayBattle() {
-       
-  }
+	public void startBattle() {
+		System.out.println("Here are the players: ");
+		System.out.println(p1.getName() + " and " + p2.getName());
+		System.out.println(p1.toString());
+		System.out.println(p2.toString());
+	}
 
 }

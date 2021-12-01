@@ -22,9 +22,17 @@ public class Player {
   }
 
   public void printBackpack() {
-    System.out.println(name + "'s Pokemons:");
     for (int i = 0; i < backpack.size(); i++) {
       System.out.println(backpack.get(i));
     }
+  }
+
+  public String toString() {
+    String finals = "";
+    finals += name + "'s Pokemons:\n";
+    for (int i = 0; i < backpack.size(); i++) {
+      finals += backpack.get(i);
+    }
+    return finals;
   }
 }
