@@ -23,7 +23,7 @@ public class Player {
   
   public Pokemon throwOut(String pokemon) {
     for (int i = 0; i < backpack.size(); i++) {
-      if (backpack.get(i).getName().equals(pokemon)) {
+      if (backpack.get(i).getName().toLowerCase().equals(pokemon)) {
         return backpack.get(i);
       }
     }
@@ -34,6 +34,16 @@ public class Player {
     for (int i = 0; i < backpack.size(); i++) {
       System.out.println(backpack.get(i));
     }
+  }
+
+  public void printBackpackBattle() {
+    for (int i = 0; i < backpack.size(); i++) {
+      System.out.println(backpack.get(i).displayHealth());
+    }
+  }
+
+  public ArrayList<Pokemon> getBackpack() {
+    return backpack;
   }
 
   public String toString() {

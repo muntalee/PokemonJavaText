@@ -70,11 +70,17 @@ public class Pokedex {
 
   public Pokemon getPokemon(String name) {
     for (int i = 0; i < pokedex.size(); i++) {
-      if (pokedex.get(i).getName().equals(name)) {
+      if (pokedex.get(i).getName().toLowerCase().equals(name)) {
         return pokedex.get(i);
       }
     }
     return null;
+  }
+
+  public void printPokedex() {
+    for (int i = 0; i < pokedex.size(); i++) {
+      System.out.println(pokedex.get(i).displayHealth());
+    }
   }
 
 }

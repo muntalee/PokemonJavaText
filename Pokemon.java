@@ -8,6 +8,7 @@ public class Pokemon {
 	private int damage;
 	private int defense;
 	private ArrayList<Attack> attack;
+  private int numRevives; 
 
 	public Pokemon(String name, String type, int maxHealth, int damage, int defense) {
 		this.name = name;
@@ -16,6 +17,7 @@ public class Pokemon {
 		health = maxHealth;
 		this.damage = damage;
 		this.defense = defense;
+    this.numRevives = 0;
 		attack =  new ArrayList<Attack>();
 	}
 
@@ -23,8 +25,21 @@ public class Pokemon {
 		return name;
 	}
 
+  public void reviving() {
+    this.health = maxHealth;
+    numRevives++;
+  }
+
+  public int getRevives() {
+    return numRevives;
+  }
+
   public int getHealth() {
     return health;
+  }
+
+  public void addHealth(int num) {
+    this.health += num;
   }
 
   public void setHealth(int health) {
