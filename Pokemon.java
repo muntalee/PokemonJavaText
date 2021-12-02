@@ -23,9 +23,17 @@ public class Pokemon {
 		return name;
 	}
 
+  public int getHealth() {
+    return health;
+  }
+
+  public void setHealth(int health) {
+    this.health = health;
+  }
+
 	public Attack getAttack(String name) {
     for (int i = 0; i < attack.size(); i++) {
-      if (attack.get(i).getName().equals(name)) {
+      if (attack.get(i).getName().toLowerCase().equals(name)) {
 				return attack.get(i);
       }
     }
@@ -36,7 +44,36 @@ public class Pokemon {
 		this.attack = attack;
 	}
 
+  public int getDefense() {
+    return defense;
+  }
+
+  public void printAttacks() {
+    for (int i = 0; i < attack.size(); i++) {
+      System.out.print(attack.get(i).toString());
+    }
+  }
+
+  public void attack (Pokemon p, Attack attack) {
+    if (attack.getPp() <= 0) {
+      System.out.println("You don't have any pp!");
+      return;
+    }
+    double dmgAgainstPokemon = attack.getPower() / ((this.damage/p.getDefense()) + 5);
+    double newHealth = Math.ceil((double)p.getHealth() - dmgAgainstPokemon);
+    System.out.println(name + " dealt " + dmgAgainstPokemon);
+    p.setHealth((int)newHealth);
+    if (p.getHealth() <= 0) {
+      p.setHealth(0);
+    }
+    attack.decreasePP();
+  }
+
+  public String displayHealth() {
+    return name + " (" + type + ")\t" + health + "/" + maxHealth + "hp";
+  }
+
 	public String toString() {
-		return name + " (" + type + ")\t" + health + "/" + maxHealth + "hp\nDMG: " + damage + "\nDEF: " + defense; 
+		return name + " (" + type + ")\t" + health + "/" + maxHealth + "hp\nDMG: " + damage + "\nDEF: " + defense + "\n"; 
 	}
 }

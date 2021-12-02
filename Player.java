@@ -20,6 +20,15 @@ public class Player {
   public void addPokemon(Pokemon p) {
     backpack.add(p);
   }
+  
+  public Pokemon throwOut(String pokemon) {
+    for (int i = 0; i < backpack.size(); i++) {
+      if (backpack.get(i).getName().equals(pokemon)) {
+        return backpack.get(i);
+      }
+    }
+    return null;
+  }
 
   public void printBackpack() {
     for (int i = 0; i < backpack.size(); i++) {
