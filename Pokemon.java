@@ -27,6 +27,9 @@ public class Pokemon {
 
   public void reviving() {
     this.health = maxHealth;
+    for (int i = 0; i < attack.size(); i++) {
+      attack.get(i).setPp(attack.get(i).getMaxPp());
+    }
     numRevives++;
   }
 
@@ -36,6 +39,10 @@ public class Pokemon {
 
   public int getHealth() {
     return health;
+  }
+
+  public int getMaxHealth() {
+    return maxHealth;
   }
 
   public void addHealth(int num) {

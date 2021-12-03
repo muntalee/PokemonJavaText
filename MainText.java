@@ -1,11 +1,13 @@
 import java.util.*;
 public class MainText {
   public static void main(String[] args) {
+    boolean hasDuplicate = false;
     Scanner in = new Scanner(System.in);
     Pokedex pokedex = new Pokedex();
     Player p1 = new Player("Player 1");
     Player p2 = new Player("Player 2");
 
+    System.out.println();
     System.out.println("Welcome Players to Munta's Pokemon Showdown!");
     System.out.println("Here is the current Pokedex: ");
     pokedex.printPokedex();
@@ -23,9 +25,22 @@ public class MainText {
         System.out.println();
       }
       else {
-        System.out.println("Added " + selectedPokemon.getName() + " to Player 1's backpack.");
-        p1.addPokemon(selectedPokemon);
-        System.out.println();
+        for (int j = 0; j < p1.getBackpack().size(); j++) {
+          if (p1.getBackpack().get(j).getName().toLowerCase().equals(selected.toLowerCase())) {
+            hasDuplicate = true;
+          }
+        }
+        if (!hasDuplicate) {
+          System.out.println("Added " + selectedPokemon.getName() + " to Player 1's backpack.");
+          p1.addPokemon(selectedPokemon);
+          System.out.println();
+        }
+        else {
+          System.out.println("Duplicate Pokemon! Enter a different Pokemon.");
+          i--;
+          System.out.println();
+        }
+        hasDuplicate = false;
       }
     }
     System.out.println();
@@ -42,9 +57,22 @@ public class MainText {
         System.out.println();
       }
       else {
-        System.out.println("Added " + selectedPokemon.getName() + " to Player 2's backpack.");
-        p2.addPokemon(selectedPokemon);
-        System.out.println();
+        for (int j = 0; j < p2.getBackpack().size(); j++) {
+          if (p2.getBackpack().get(j).getName().toLowerCase().equals(selected.toLowerCase())) {
+            hasDuplicate = true;
+          }
+        }
+        if (!hasDuplicate) {
+          System.out.println("Added " + selectedPokemon.getName() + " to Player 1's backpack.");
+          p2.addPokemon(selectedPokemon);
+          System.out.println();
+        }
+        else {
+          System.out.println("Duplicate Pokemon! Enter a different Pokemon.");
+          i--;
+          System.out.println();
+        }
+        hasDuplicate = false;
       }
     }
 

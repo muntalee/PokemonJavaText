@@ -17,6 +17,10 @@ public class Attack {
     return remainingPP;
   }
 
+  public int getMaxPp() {
+    return pp;
+  }
+
   public void setPp(int remainingPP) {
     this.remainingPP = remainingPP;
   }

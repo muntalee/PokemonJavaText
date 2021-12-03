@@ -35,7 +35,7 @@ public class Player {
       System.out.println(backpack.get(i));
     }
   }
-
+  
   public void printBackpackBattle() {
     for (int i = 0; i < backpack.size(); i++) {
       System.out.println(backpack.get(i).displayHealth());
