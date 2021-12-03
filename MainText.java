@@ -18,7 +18,7 @@ public class MainText {
       System.out.print("> ");
       String selected = in.next();
       System.out.println();
-      Pokemon selectedPokemon = pokedex.getPokemon(selected);
+      Pokemon selectedPokemon = pokedex.getPokemon(selected.toLowerCase());
       if (selectedPokemon == null) {
         System.out.println("Invalid Pokemon, enter again!");
         i--;

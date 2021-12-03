@@ -5,12 +5,12 @@ public class Pokedex {
     pokedex = new ArrayList<Pokemon>();
     // bunch of attacks
     Attack tackle = new Attack("Tackle", 35, 40, 100);
-    Attack vineWhip = new Attack("Vine Whip", 25, 45, 100);
+    Attack vineWhip = new Attack("Vine-Whip", 25, 45, 100);
     Attack doubleEdge = new Attack("Double-Edge", 15, 25, 95);
     Attack scratch = new Attack("Scratch", 35, 40, 100);
     Attack slash = new Attack("Slash", 20, 70, 100);
-    Attack fireFang = new Attack("Fire Fang", 15, 64, 95);
-    Attack rapidSpin = new Attack("Rapid Spin", 40, 50, 100);
+    Attack fireFang = new Attack("Fire-Fang", 15, 64, 95);
+    Attack rapidSpin = new Attack("Rapid-Spin", 40, 50, 100);
     Attack bite = new Attack("Bite", 25, 60, 100);
     Attack nuzzle = new Attack("Nuzzle", 20, 20, 100);
     Attack feint = new Attack("Feint", 10, 30, 100);

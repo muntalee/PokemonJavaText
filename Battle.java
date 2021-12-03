@@ -153,7 +153,6 @@ public class Battle {
         items.printItems();
         System.out.println("> ");
         String selectedItem = in.next();
-        System.out.println(items.checkValidItem(selectedItem));
         while (!items.checkValidItem(selectedItem)) {
           System.out.println("Invalid item! Enter again:");
           System.out.print("> ");
