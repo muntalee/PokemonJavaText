@@ -15,6 +15,8 @@ public class Pokedex {
     Attack nuzzle = new Attack("Nuzzle", 20, 20, 100);
     Attack feint = new Attack("Feint", 10, 30, 100);
     Attack spark = new Attack("Spark", 20, 64, 100);
+    Attack pound = new Attack("Pound", 35, 40, 100);
+    Attack covet = new Attack("Covet", 25, 60, 100);
 
     /* LIST OF ALL POKEMON*/
 
@@ -62,6 +64,15 @@ public class Pokedex {
     eeveeAttack.add(doubleEdge);
     eevee.addMoveSet(eeveeAttack);
     pokedex.add(eevee);
+
+    // Jigglypuff
+    Pokemon jigglypuff = new Pokemon("Jigglypuff", "Normal", 70, 45, 20);
+    ArrayList<Attack> jigglyAttack = new ArrayList<Attack>();
+    jigglyAttack.add(pound);
+    jigglyAttack.add(covet);
+    jigglyAttack.add(doubleEdge);
+    jigglypuff.addMoveSet(eeveeAttack);
+    pokedex.add(jigglypuff);
   }
 
   public Pokemon getPokemonByIndex(int n) {
@@ -70,7 +81,9 @@ public class Pokedex {
 
   public Pokemon getPokemon(String name) {
     for (int i = 0; i < pokedex.size(); i++) {
-      if (pokedex.get(i).getName().toLowerCase().equals(name)) {
+      name = name.toLowerCase();
+      name = name.substring(0, 1).toUpperCase() + name.substring(1);
+      if (pokedex.get(i).getName().equals(name)) {
         return pokedex.get(i);
       }
     }

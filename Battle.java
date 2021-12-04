@@ -44,6 +44,7 @@ public class Battle {
       }
     }
     startBattle(pW, newPokemon);
+    in.close();
   }
 
   public void startBattle(Pokemon p1, Pokemon p2) {
